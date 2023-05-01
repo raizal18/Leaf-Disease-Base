@@ -64,12 +64,18 @@ label_name = list(img_gen.class_indices.keys())[list(img_gen.class_indices.value
 
 im,info = img_gen.next()
 
+font = {'family': 'lato',
+        'color':  'springgreen',
+        'weight': 'bold',
+        'size': 8,
+        }
+
 plt.figure()
 
 for i in range(1,26):
     plt.subplot(5, 5, i)
     plt.imshow(im[i]/255)
-    plt.title( list(img_gen.class_indices.keys())[np.argmax(info[i],axis=0)])
+    plt.title(list(img_gen.class_indices.keys())[np.argmax(info[i],axis=0)],loc='center',fontdict=font)
 
 plt.show(block=False)
 

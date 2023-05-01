@@ -5,7 +5,7 @@ from keras.preprocessing.image import ImageDataGenerator
 
 def get_images(filepath:set) -> object:
 
-    data_gen = ImageDataGenerator()
+    data_gen = ImageDataGenerator(rescale=1.0/255.0)
     image_generator = data_gen.flow_from_directory(filepath)
     return image_generator
 
