@@ -64,7 +64,7 @@ label_name = list(img_gen.class_indices.keys())[list(img_gen.class_indices.value
 
 im,info = img_gen.next()
 
-font = {'family': 'lato',
+font = {'family': 'monospace',
         'color':  'springgreen',
         'weight': 'bold',
         'size': 8,
@@ -72,10 +72,11 @@ font = {'family': 'lato',
 
 plt.figure()
 
-for i in range(1,26):
-    plt.subplot(5, 5, i)
-    plt.imshow(im[i]/255)
+for i in range(1,17):
+    plt.subplot(4, 4, i)
+    plt.imshow(im[i])
     plt.title(list(img_gen.class_indices.keys())[np.argmax(info[i],axis=0)],loc='center',fontdict=font)
+    plt.axis('off')
 
 plt.show(block=False)
 
