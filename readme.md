@@ -1,4 +1,15 @@
-Dataset
+Requirememt :
+python 3.10.10
+
+pakages
+
+--> requiremnet.txt
+
+
+
+Dataset:
+
+Link : https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset
 
 D:\PHD\LEAF DISEASE\CODE\PLANTVILLAGE DATASET
 
