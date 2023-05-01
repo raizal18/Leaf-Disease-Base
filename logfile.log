@@ -1,81 +1,56 @@
-2023-05-01 20:57:55,800 File not found , Check path correcty,...
-2023-05-01 20:57:55,806 0 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color counts 0
-2023-05-01 20:57:55,808 1 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___Apple_scab counts 630
-2023-05-01 20:57:55,809 2 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___Black_rot counts 621
-2023-05-01 20:57:55,810 3 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___Cedar_apple_rust counts 275
-2023-05-01 20:57:55,814 4 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___healthy counts 1645
-2023-05-01 20:57:55,818 5 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Blueberry___healthy counts 1502
-2023-05-01 20:57:55,820 6 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Cherry_(including_sour)___healthy counts 854
-2023-05-01 20:57:55,823 7 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Cherry_(including_sour)___Powdery_mildew counts 1052
-2023-05-01 20:57:55,825 8 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot counts 513
-2023-05-01 20:57:55,828 9 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___Common_rust_ counts 1192
-2023-05-01 20:57:55,832 10 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___healthy counts 1162
-2023-05-01 20:57:55,835 11 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___Northern_Leaf_Blight counts 985
-2023-05-01 20:57:55,838 12 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___Black_rot counts 1180
-2023-05-01 20:57:55,842 13 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___Esca_(Black_Measles) counts 1383
-2023-05-01 20:57:55,844 14 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___healthy counts 423
-2023-05-01 20:57:55,847 15 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___Leaf_blight_(Isariopsis_Leaf_Spot) counts 1076
-2023-05-01 20:57:55,858 16 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Orange___Haunglongbing_(Citrus_greening) counts 5507
-2023-05-01 20:57:55,864 17 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Peach___Bacterial_spot counts 2297
-2023-05-01 20:57:55,866 18 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Peach___healthy counts 360
-2023-05-01 20:57:55,869 19 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Pepper,_bell___Bacterial_spot counts 997
-2023-05-01 20:57:55,872 20 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Pepper,_bell___healthy counts 1478
-2023-05-01 20:57:55,875 21 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Potato___Early_blight counts 1000
-2023-05-01 20:57:55,876 22 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Potato___healthy counts 152
-2023-05-01 20:57:55,880 23 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Potato___Late_blight counts 1000
-2023-05-01 20:57:55,882 24 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Raspberry___healthy counts 371
-2023-05-01 20:57:55,891 25 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Soybean___healthy counts 5090
-2023-05-01 20:57:55,896 26 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Squash___Powdery_mildew counts 1835
-2023-05-01 20:57:55,897 27 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Strawberry___healthy counts 456
-2023-05-01 20:57:55,901 28 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Strawberry___Leaf_scorch counts 1109
-2023-05-01 20:57:55,905 29 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Bacterial_spot counts 2127
-2023-05-01 20:57:55,909 30 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Early_blight counts 1000
-2023-05-01 20:57:55,913 31 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___healthy counts 1591
-2023-05-01 20:57:55,917 32 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Late_blight counts 1909
-2023-05-01 20:57:55,920 33 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Leaf_Mold counts 952
-2023-05-01 20:57:55,924 34 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Septoria_leaf_spot counts 1771
-2023-05-01 20:57:55,928 35 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Spider_mites Two-spotted_spider_mite counts 1676
-2023-05-01 20:57:55,932 36 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Target_Spot counts 1404
-2023-05-01 20:57:55,934 37 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Tomato_mosaic_virus counts 373
-2023-05-01 20:57:55,947 38 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Tomato_Yellow_Leaf_Curl_Virus counts 5357
-2023-05-01 20:57:55,948 total images in dataset : 54305
-2023-05-01 20:58:37,265 0 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color counts 0
-2023-05-01 20:58:37,268 1 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___Apple_scab counts 630
-2023-05-01 20:58:37,272 2 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___Black_rot counts 621
-2023-05-01 20:58:37,274 3 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___Cedar_apple_rust counts 275
-2023-05-01 20:58:37,281 4 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___healthy counts 1645
-2023-05-01 20:58:37,288 5 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Blueberry___healthy counts 1502
-2023-05-01 20:58:37,292 6 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Cherry_(including_sour)___healthy counts 854
-2023-05-01 20:58:37,298 7 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Cherry_(including_sour)___Powdery_mildew counts 1052
-2023-05-01 20:58:37,301 8 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot counts 513
-2023-05-01 20:58:37,306 9 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___Common_rust_ counts 1192
-2023-05-01 20:58:37,312 10 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___healthy counts 1162
-2023-05-01 20:58:37,318 11 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___Northern_Leaf_Blight counts 985
-2023-05-01 20:58:37,326 12 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___Black_rot counts 1180
-2023-05-01 20:58:37,332 13 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___Esca_(Black_Measles) counts 1383
-2023-05-01 20:58:37,335 14 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___healthy counts 423
-2023-05-01 20:58:37,340 15 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___Leaf_blight_(Isariopsis_Leaf_Spot) counts 1076
-2023-05-01 20:58:37,359 16 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Orange___Haunglongbing_(Citrus_greening) counts 5507
-2023-05-01 20:58:37,368 17 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Peach___Bacterial_spot counts 2297
-2023-05-01 20:58:37,370 18 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Peach___healthy counts 360
-2023-05-01 20:58:37,376 19 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Pepper,_bell___Bacterial_spot counts 997
-2023-05-01 20:58:37,381 20 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Pepper,_bell___healthy counts 1478
-2023-05-01 20:58:37,385 21 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Potato___Early_blight counts 1000
-2023-05-01 20:58:37,386 22 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Potato___healthy counts 152
-2023-05-01 20:58:37,390 23 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Potato___Late_blight counts 1000
-2023-05-01 20:58:37,393 24 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Raspberry___healthy counts 371
-2023-05-01 20:58:37,409 25 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Soybean___healthy counts 5090
-2023-05-01 20:58:37,418 26 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Squash___Powdery_mildew counts 1835
-2023-05-01 20:58:37,424 27 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Strawberry___healthy counts 456
-2023-05-01 20:58:37,433 28 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Strawberry___Leaf_scorch counts 1109
-2023-05-01 20:58:37,447 29 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Bacterial_spot counts 2127
-2023-05-01 20:58:37,454 30 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Early_blight counts 1000
-2023-05-01 20:58:37,460 31 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___healthy counts 1591
-2023-05-01 20:58:37,469 32 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Late_blight counts 1909
-2023-05-01 20:58:37,475 33 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Leaf_Mold counts 952
-2023-05-01 20:58:37,485 34 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Septoria_leaf_spot counts 1771
-2023-05-01 20:58:37,495 35 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Spider_mites Two-spotted_spider_mite counts 1676
-2023-05-01 20:58:37,502 36 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Target_Spot counts 1404
-2023-05-01 20:58:37,506 37 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Tomato_mosaic_virus counts 373
-2023-05-01 20:58:37,536 38 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Tomato_Yellow_Leaf_Curl_Virus counts 5357
-2023-05-01 20:58:37,538 total images in dataset : 54305
+2023-05-01 22:08:53,187 Dataset Path D:/PHD/Leaf Disease/CODE/plantvillage dataset
+2023-05-01 22:08:53,188 0 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color counts 0
+2023-05-01 22:08:53,191 1 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___Apple_scab counts 630
+2023-05-01 22:08:53,194 2 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___Black_rot counts 621
+2023-05-01 22:08:53,195 3 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___Cedar_apple_rust counts 275
+2023-05-01 22:08:53,200 4 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Apple___healthy counts 1645
+2023-05-01 22:08:53,207 5 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Blueberry___healthy counts 1502
+2023-05-01 22:08:53,213 6 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Cherry_(including_sour)___healthy counts 854
+2023-05-01 22:08:53,220 7 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Cherry_(including_sour)___Powdery_mildew counts 1052
+2023-05-01 22:08:53,224 8 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot counts 513
+2023-05-01 22:08:53,229 9 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___Common_rust_ counts 1192
+2023-05-01 22:08:53,235 10 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___healthy counts 1162
+2023-05-01 22:08:53,241 11 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Corn_(maize)___Northern_Leaf_Blight counts 985
+2023-05-01 22:08:53,245 12 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___Black_rot counts 1180
+2023-05-01 22:08:53,253 13 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___Esca_(Black_Measles) counts 1383
+2023-05-01 22:08:53,257 14 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___healthy counts 423
+2023-05-01 22:08:53,263 15 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Grape___Leaf_blight_(Isariopsis_Leaf_Spot) counts 1076
+2023-05-01 22:08:53,296 16 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Orange___Haunglongbing_(Citrus_greening) counts 5507
+2023-05-01 22:08:53,309 17 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Peach___Bacterial_spot counts 2297
+2023-05-01 22:08:53,312 18 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Peach___healthy counts 360
+2023-05-01 22:08:53,319 19 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Pepper,_bell___Bacterial_spot counts 997
+2023-05-01 22:08:53,325 20 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Pepper,_bell___healthy counts 1478
+2023-05-01 22:08:53,331 21 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Potato___Early_blight counts 1000
+2023-05-01 22:08:53,333 22 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Potato___healthy counts 152
+2023-05-01 22:08:53,339 23 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Potato___Late_blight counts 1000
+2023-05-01 22:08:53,341 24 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Raspberry___healthy counts 371
+2023-05-01 22:08:53,359 25 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Soybean___healthy counts 5090
+2023-05-01 22:08:53,367 26 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Squash___Powdery_mildew counts 1835
+2023-05-01 22:08:53,370 27 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Strawberry___healthy counts 456
+2023-05-01 22:08:53,376 28 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Strawberry___Leaf_scorch counts 1109
+2023-05-01 22:08:53,384 29 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Bacterial_spot counts 2127
+2023-05-01 22:08:53,389 30 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Early_blight counts 1000
+2023-05-01 22:08:53,406 31 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___healthy counts 1591
+2023-05-01 22:08:53,416 32 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Late_blight counts 1909
+2023-05-01 22:08:53,420 33 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Leaf_Mold counts 952
+2023-05-01 22:08:53,428 34 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Septoria_leaf_spot counts 1771
+2023-05-01 22:08:53,435 35 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Spider_mites Two-spotted_spider_mite counts 1676
+2023-05-01 22:08:53,443 36 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Target_Spot counts 1404
+2023-05-01 22:08:53,446 37 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Tomato_mosaic_virus counts 373
+2023-05-01 22:08:53,467 38 D:/PHD/Leaf Disease/CODE/plantvillage dataset\color\Tomato___Tomato_Yellow_Leaf_Curl_Virus counts 5357
+2023-05-01 22:08:53,469 Unique Fruit Names
+2023-05-01 22:08:53,469 Apple
+2023-05-01 22:08:53,470 Blueberry
+2023-05-01 22:08:53,471 Cherry_(including_sour)
+2023-05-01 22:08:53,471 Corn_(maize)
+2023-05-01 22:08:53,472 Grape
+2023-05-01 22:08:53,473 Orange
+2023-05-01 22:08:53,473 Peach
+2023-05-01 22:08:53,474 Pepper,_bell
+2023-05-01 22:08:53,474 Potato
+2023-05-01 22:08:53,475 Raspberry
+2023-05-01 22:08:53,476 Soybean
+2023-05-01 22:08:53,477 Squash
+2023-05-01 22:08:53,478 Strawberry
+2023-05-01 22:08:53,478 Tomato
+2023-05-01 22:08:53,479 total images in dataset : 54305
