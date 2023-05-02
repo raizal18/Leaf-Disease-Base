@@ -11,6 +11,8 @@ DATA_PATH = "D:/PHD/Leaf Disease/CODE/plantvillage dataset"
 
 _COLOR_IMAGE = os.path.join(DATA_PATH,'color')
 
+_SEG_IMAGE = os.path.join(DATA_PATH,'segmented')
+
 logging.basicConfig(filename='logfile.log', 
                     format='%(asctime)s %(message)s', filemode='w')
 
@@ -51,18 +53,18 @@ for _name in unique_fruits:
    
 logger.info(f"total images in dataset : {total_counts}")
 
-from data_importer import get_images
+from data_importer import get_images, get_segment_mask
 
 img_gen = get_images(_COLOR_IMAGE)
 
-
-n = 0
-
-label_name = list(img_gen.class_indices.keys())[list(img_gen.class_indices.values()).index(n)]
+msk_gen = get_segment_mask(_SEG_IMAGE)
 
 
+label_name = lambda  n,img_gen : list(img_gen.class_indices.keys())[list(img_gen.class_indices.values()).index(n)]
 
-im,info = img_gen.next()
+
+
+# im,info = img_gen.next()
 
 font = {'family': 'monospace',
         'color':  'springgreen',
@@ -70,13 +72,27 @@ font = {'family': 'monospace',
         'size': 8,
         }
 
+# plt.figure()
+
+# for i in range(1,17):
+#     plt.subplot(4, 4, i)
+#     plt.imshow(im[i])
+#     plt.title(list(img_gen.class_indices.keys())[np.argmax(info[i],axis=0)],loc='center',fontdict=font)
+#     plt.axis('off')
+
+# plt.show(block=False)
+
+
+bw,info = msk_gen.next()
+
 plt.figure()
 
 for i in range(1,17):
     plt.subplot(4, 4, i)
-    plt.imshow(im[i])
-    plt.title(list(img_gen.class_indices.keys())[np.argmax(info[i],axis=0)],loc='center',fontdict=font)
+    plt.imshow(bw[i])
+    plt.title(label_name(i, msk_gen),loc='center',fontdict=font)
     plt.axis('off')
 
 plt.show(block=False)
 
+ 

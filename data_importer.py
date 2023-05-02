@@ -11,7 +11,9 @@ def get_images(filepath:set) -> object:
 
 def get_segment_mask(filepath):
 
-    pass
+    data_gen = ImageDataGenerator(rescale=1.0/255.0)
+    image_generator = data_gen.flow_from_directory(filepath, color_mode="rgb")
+    return image_generator
 
 
 def get_train_data(filepath):
