@@ -64,7 +64,7 @@ label_name = lambda  n,img_gen : list(img_gen.class_indices.keys())[list(img_gen
 
 
 
-# im,info = img_gen.next()
+im,info = img_gen.next()
 
 font = {'family': 'monospace',
         'color':  'springgreen',
@@ -72,27 +72,27 @@ font = {'family': 'monospace',
         'size': 8,
         }
 
-# plt.figure()
-
-# for i in range(1,17):
-#     plt.subplot(4, 4, i)
-#     plt.imshow(im[i])
-#     plt.title(list(img_gen.class_indices.keys())[np.argmax(info[i],axis=0)],loc='center',fontdict=font)
-#     plt.axis('off')
-
-# plt.show(block=False)
-
-
-bw,info = msk_gen.next()
-
 plt.figure()
 
 for i in range(1,17):
     plt.subplot(4, 4, i)
-    plt.imshow(bw[i])
-    plt.title(label_name(i, msk_gen),loc='center',fontdict=font)
+    plt.imshow(im[i])
+    plt.title(list(img_gen.class_indices.keys())[np.argmax(info[i],axis=0)],loc='center',fontdict=font)
     plt.axis('off')
 
 plt.show(block=False)
 
- 
+
+# bw,info = msk_gen.next()
+
+# plt.figure()
+
+# for i in range(1,17):
+#     plt.subplot(4, 4, i)
+#     plt.imshow(bw[i])
+#     plt.title(label_name(i, msk_gen),loc='center',fontdict=font)
+#     plt.axis('off')
+
+# plt.show(block=False)
+
+  
