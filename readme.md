@@ -4,7 +4,7 @@ python 3.10.10
 pakages
 
 --> requiremnet.txt
-
+pip3 install torch torchvision torchaudio
 
 
 Dataset:
