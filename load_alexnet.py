@@ -3,7 +3,7 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
-
+from PIL import Image
 
 model = models.alexnet(pretrained=True)
 
@@ -19,19 +19,10 @@ transform = transforms.Compose([
                          std=[0.229, 0.224, 0.225])
 ])
 
-dataset = ImageFolder('path/to/images', transform=transform)
-loader = DataLoader(dataset, batch_size=32)
 
+def extract_alexnet_feature(img):
 
-features = []
-with torch.no_grad():
-    for images, _ in loader:
-        outputs = model(images)
-        features.append(outputs)
+    feature = model(transform(img)).detach().numpy()
+    return feature
 
-# Concatenate the extracted features into a single tensor
-features = torch.cat(features, dim=0)
-
-# Save the extracted features to a file
-torch.save(features, 'features.pt')
-mod = torch.load('models/alexnet.pt')
+# mod = torch.load('models/alexnet.pt')

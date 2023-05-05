@@ -82,6 +82,7 @@ for i in range(1,17):
 
 plt.show(block=False)
 
+img_gen
 
 # bw,info = msk_gen.next()
 
