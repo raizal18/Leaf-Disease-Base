@@ -48,9 +48,9 @@ def read_data(image_files, label_array):
         feat1 = alexnet(image)
         feat2 = resnet(image)
         feat3 = vggnet(image)
-        flatten_feature1 = feat1.ravel()
-        flatten_feature2 = feat2.ravel()
-        flatten_feature3 = feat3.ravel()
+        flatten_feature1 = np.expand_dims(feat1.ravel(), axis=0)
+        flatten_feature2 = np.expand_dims(feat2.ravel(), axis=0)
+        flatten_feature3 = np.expand_dims(feat3.ravel(), axis=0)
     labels = np.array(label_array)
     return [flatten_feature1, flatten_feature2, flatten_feature3], labels
 
@@ -86,15 +86,15 @@ def data_generator(image_files, label_array, batch_size):
 
 
 # Define the input layers
-input1 = tf.keras.layers.Input(shape=(9216,))
-input2 = tf.keras.layers.Input(shape=(131072,))
-input3 = tf.keras.layers.Input(shape=(32768,))
+input1 = tf.keras.layers.Input(shape=(1,9216))
+input2 = tf.keras.layers.Input(shape=(1,131072))
+input3 = tf.keras.layers.Input(shape=(1,32768))
 
 # Concatenate the three input layers
 x = tf.keras.layers.Concatenate()([input1, input2, input3])
 
 # Define the rest of the model architecture
-x = tf.keras.layers.Dense(512, activation='relu')(tf.expand_dims(x,axis=0))
+x = tf.keras.layers.Dense(512, activation='relu')(x)
 x = tf.keras.layers.Dropout(0.5)(x)
 x = tf.keras.layers.Dense(256, activation='relu')(x)
 x = tf.keras.layers.Dropout(0.5)(x)
@@ -108,7 +108,7 @@ model = tf.keras.models.Model(inputs=[input1, input2, input3], outputs=output)
 print(model.summary())
 
 model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3), loss = tf.keras.losses.categorical_crossentropy,
-               metrics=[tf.keras.metrics.Accuracy(),tf.keras.metrics.Precision()])
+               metrics=['accuracy'])
 
 
 
