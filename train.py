@@ -32,6 +32,19 @@ flatten_feature1 = feat1.ravel()
 flatten_feature2 = feat2.ravel()
 flatten_feature3 = feat3.ravel()
 
+
+def padding(arr, max_len,val=0):
+    new_arr = []
+    for i in range(max_len):
+        if i<len(arr):
+            new_arr.append(arr[i])
+        else:
+            new_arr.append(0)
+
+    return np.array(new_arr)
+
+
+
 import tensorflow as tf
 import numpy as np
 
@@ -48,60 +61,61 @@ def read_data(image_files, label_array):
         feat1 = alexnet(image)
         feat2 = resnet(image)
         feat3 = vggnet(image)
-        flatten_feature1 = np.expand_dims(feat1.ravel(), axis=0)
-        flatten_feature2 = np.expand_dims(feat2.ravel(), axis=0)
-        flatten_feature3 = np.expand_dims(feat3.ravel(), axis=0)
+        flatten_feature1 = feat1.ravel()
+        flatten_feature2 = feat2.ravel()
+        flatten_feature3 = feat3.ravel()
+        max_len = len(flatten_feature2)
+        data = np.expand_dims(np.array([padding(flatten_feature1, max_len),padding(flatten_feature2, max_len),padding(flatten_feature3, max_len)]),axis=0)
     labels = np.array(label_array)
-    return [flatten_feature1, flatten_feature2, flatten_feature3], labels
+    return data, labels
 
-# Define a custom data generator that reads data using the custom function
+
 def data_generator(image_files, label_array, batch_size):
-    # Define the total number of samples
+
     num_samples = len(image_files)
-    # Define the index of the current sample in the dataset
+
     index = 0
-    # Shuffle the dataset
+
     indices = np.arange(num_samples)
     np.random.shuffle(indices)
-    # Iterate over the dataset indefinitely
+
     while True:
-        # Define the batch start and end indices
+
         start = index
         end = index + batch_size
-        # Wrap around to the beginning of the dataset if the end is reached
+
         if end > num_samples:
             np.random.shuffle(indices)
             start = 0
             end = batch_size
-        # Load and preprocess the data and labels for the current batch
+
         batch_image_files = [image_files[i] for i in indices[start:end]]
         batch_label_array = label_array[indices[start:end]]
         batch_images, batch_labels = read_data(batch_image_files, batch_label_array)
-        # Increment the index for the next batch
+
         index = end
-        # Yield the batch data and labels
+
         yield batch_images, batch_labels
 
 
 
 
 # Define the input layers
-input1 = tf.keras.layers.Input(shape=(1,9216))
-input2 = tf.keras.layers.Input(shape=(1,131072))
-input3 = tf.keras.layers.Input(shape=(1,32768))
-
-# Concatenate the three input layers
-x = tf.keras.layers.Concatenate()([input1, input2, input3])
+input1 = tf.keras.layers.Input(shape=(3,flatten_feature2.shape[0]))
 
 # Define the rest of the model architecture
+x = tf.keras.layers.LSTM(500)(input1)
+x = tf.keras.layers.Flatten()(x)
 x = tf.keras.layers.Dense(512, activation='relu')(x)
 x = tf.keras.layers.Dropout(0.5)(x)
 x = tf.keras.layers.Dense(256, activation='relu')(x)
 x = tf.keras.layers.Dropout(0.5)(x)
+
 output = tf.keras.layers.Dense(len(unique_id.keys()), activation='softmax')(x)
 
 # Define the model with three inputs and one output
-model = tf.keras.models.Model(inputs=[input1, input2, input3], outputs=output)
+model = tf.keras.models.Model(inputs=input1, outputs=output)
+
 
 
 
