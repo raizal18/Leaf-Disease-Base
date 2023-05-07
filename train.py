@@ -182,6 +182,8 @@ cm = multilabel_confusion_matrix(y_true, y_pred)
 met = confusion(y_pred, y_true)
 
 [acc,pre, rec, f1s] = met.metrics()
+
+np.save('base_metric.npy', met.metrics())
 cm = met.getmatrix()
 print('classification report')
 print(classification_report(y_pred = met.Y_pred,y_true=met.Y_true))
