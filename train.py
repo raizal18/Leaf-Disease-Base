@@ -1,4 +1,5 @@
 import os
+import cv2
 import numpy as np
 from PIL import Image
 import tensorflow as tf
@@ -10,6 +11,7 @@ from load_vgg import extract_features as vggnet
 from load_resnet import extract_feature as resnet
 from keras.utils import Progbar
 from sklearn.model_selection import train_test_split
+from keras.layers import Dense, Conv1D, LSTM,Concatenate,ReLU 
 
 EXTRAXT_FEATURE = False
 
@@ -48,12 +50,7 @@ def padding(arr, max_len,val=0):
 
 
 
-import tensorflow as tf
-import numpy as np
 
-import tensorflow as tf
-import numpy as np
-import cv2
 
 # Define a custom function to read and preprocess the data
 def read_data(image_files, label_array):
@@ -110,18 +107,21 @@ if EXTRAXT_FEATURE == True:
     y_ = []
     prog = Progbar(len(x_train),width=50)
     for idx,(path, label) in enumerate(zip(x_train,y_train)):
-        if idx >=5000:
-            data,label = read_data([path],[label])
-            np.save(f'features/{format(idx,"05d")}.npy',data)
-            prog.update(idx)
+        data,label = np.mean(np.reshape(np.mean(np.squeeze(read_data([path],[label])),axis=0),(32,int(131072/32))),axis=0)
+        x_.append(data)
+        prog.update(idx)
 
-    np.save('features/labels.npy', y_train)
-
+    np.save('features/labels1.npy', y_train)
+    np.save('features/feature1.npy', np.array(x_))
     print('sub 1 completed')
+
 else:
-    train_data = []
+    train_data = np.load('features/feature.npy')
     train_labels = np.load('features/labels.npy')
-    for i in range(train_labels.shape[0]):
-        train_data.append(np.load(f'features/{format(i,"05d")}.npy'))
-    train_data = np.array(train_data)
-    
+
+
+
+
+model = tf.keras.Sequential()
+model.add(LSTM())
+
