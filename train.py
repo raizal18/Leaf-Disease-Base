@@ -8,7 +8,10 @@ from sklearn.model_selection import train_test_split
 from load_alexnet import extract_alexnet_feature as alexnet
 from load_vgg import extract_features as vggnet
 from load_resnet import extract_feature as resnet
+from keras.utils import Progbar
+from sklearn.model_selection import train_test_split
 
+EXTRAXT_FEATURE = False
 
 images = img_gen.filepaths
 
@@ -99,31 +102,26 @@ def data_generator(image_files, label_array, batch_size):
 
 
 
-
-# Define the input layers
-input1 = tf.keras.layers.Input(shape=(3,flatten_feature2.shape[0]))
-
-# Define the rest of the model architecture
-x = tf.keras.layers.LSTM(500)(input1)
-x = tf.keras.layers.Flatten()(x)
-x = tf.keras.layers.Dense(512, activation='relu')(x)
-x = tf.keras.layers.Dropout(0.5)(x)
-x = tf.keras.layers.Dense(256, activation='relu')(x)
-x = tf.keras.layers.Dropout(0.5)(x)
-
-output = tf.keras.layers.Dense(len(unique_id.keys()), activation='softmax')(x)
-
-# Define the model with three inputs and one output
-model = tf.keras.models.Model(inputs=input1, outputs=output)
+if EXTRAXT_FEATURE == True:
+    _, x_train, _, y_train = train_test_split(images, tf.keras.utils.to_categorical(labels),test_size=0.20)
 
 
+    x_ = []
+    y_ = []
+    prog = Progbar(len(x_train),width=50)
+    for idx,(path, label) in enumerate(zip(x_train,y_train)):
+        if idx >=5000:
+            data,label = read_data([path],[label])
+            np.save(f'features/{format(idx,"05d")}.npy',data)
+            prog.update(idx)
 
+    np.save('features/labels.npy', y_train)
 
-print(model.summary())
-
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3), loss = tf.keras.losses.categorical_crossentropy,
-               metrics=['accuracy'])
-
-
-
-model.fit(data_generator(images, tf.keras.utils.to_categorical(labels), 32),epochs=10,verbose=1)
+    print('sub 1 completed')
+else:
+    train_data = []
+    train_labels = np.load('features/labels.npy')
+    for i in range(train_labels.shape[0]):
+        train_data.append(np.load(f'features/{format(i,"05d")}.npy'))
+    train_data = np.array(train_data)
+    
