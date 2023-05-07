@@ -16,7 +16,11 @@ Dataset:
 
 Link : https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset
 
-D:\PHD\LEAF DISEASE\CODE\PLANTVILLAGE DATASET
+download Extract above dataset copy the path and paste in main.py flag "DATA_PATH" like below
+
+DATA_PATH = "download/plantvillage dataset" 
+
+
 
 ├───color
 │   ├───Apple___Apple_scab
