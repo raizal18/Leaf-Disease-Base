@@ -72,17 +72,17 @@ font = {'family': 'monospace',
         'size': 8,
         }
 
-plt.figure()
+# plt.figure()
 
-for i in range(1,17):
-    plt.subplot(4, 4, i)
-    plt.imshow(im[i])
-    plt.title(list(img_gen.class_indices.keys())[np.argmax(info[i],axis=0)],loc='center',fontdict=font)
-    plt.axis('off')
+# for i in range(1,17):
+#     plt.subplot(4, 4, i)
+#     plt.imshow(im[i])
+#     plt.title(list(img_gen.class_indices.keys())[np.argmax(info[i],axis=0)],loc='center',fontdict=font)
+#     plt.axis('off')
 
-plt.show(block=False)
+# plt.show(block=False)
 
-img_gen
+# img_gen
 
 # bw,info = msk_gen.next()
 
