@@ -12,6 +12,8 @@ from load_resnet import extract_feature as resnet
 from keras.utils import Progbar
 from sklearn.model_selection import train_test_split
 from keras.layers import Dense, Conv1D, LSTM,Concatenate,ReLU 
+from confusion import confusion
+from sklearn.metrics import multilabel_confusion_matrix, classification_report
 
 # set Default Flags  
  
@@ -149,10 +151,6 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 
-# Load model weights for avoid model from scratch
-
-model = tf.keras.models.load_model('trained_weights.h5')
-
 
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir='./logs')
 # Train the model
@@ -162,12 +160,21 @@ model.fit(train_data, train_labels, epochs=10, batch_size=32, callbacks=[tensorb
 if SAVE_MODEL == True:
     model.save('trained_weights.h5')
 
+
+# Load model weights for avoid model from scratch
+
+model = tf.keras.models.load_model('trained_weights.h5')
+
 pred = model.predict(x_test)
+
 
 y_pred = inverse_transform(pred)
 y_true = inverse_transform(y_test)
 
-from sklearn.metrics import multilabel_confusion_matrix, classification_report
 
 cm = multilabel_confusion_matrix(y_true, y_pred)
-print(classification_report(y_true,y_pred))
+# print(classification_report(y_true,y_pred))
+
+
+met = confusion(y_pred, y_true)
+

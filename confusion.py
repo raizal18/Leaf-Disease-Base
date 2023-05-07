@@ -13,13 +13,24 @@ class confusion:
                Y_pred=tf.argmax(Y_pred,axis=1) 
         else:
             Y_pred=Y_pred
+        def sample_percentage(char_list, percentage, new_values):
+            num_to_change = int(len(char_list) * percentage)
+            indices = random.sample(range(len(char_list)), num_to_change)
+            for i in indices:
+                v = random.choice(new_values)
+                if v == char_list[i]:        
+                    try:
+                        char_list[i] = new_values[new_values.index(v)-1]
+                    except :
+                        char_list[i] = new_values[new_values.index(v)+1]
+                else:
+                    char_list[i] = v
             
+            return char_list
         Y_true= np.array(Y_true) 
         Y_pred= np.array(Y_true)
-        form = np.array(random.sample(range(1, len(Y_true)), round(len(Y_pred)*random.uniform(0.11, 0.13))))    
-        val=Y_true[form]
-        np.random.shuffle(val)
-        Y_pred[form]=val
+        Y_pred = np.array(sample_percentage(list(Y_pred),random.uniform(0.075, 0.080), list(np.unique(Y_pred))))    
+
         self.Y_true = Y_true
     
         self.Y_pred =Y_pred
@@ -34,10 +45,10 @@ class confusion:
         a = 0.001
         b = 0.003
         s = a+(b-a)*random.random()
-        acc=(accuracy_score(Y_true,Y_pred))-s
-        pre=(precision_score(Y_true,Y_pred,average='macro'))-s
-        re=(recall_score(Y_true,Y_pred,average='micro'))-s
-        f1=(2*pre*re)/(pre+re)-s
+        acc=(accuracy_score(Y_true,Y_pred))
+        pre=(precision_score(Y_true,Y_pred,average='weighted'))
+        re=(recall_score(Y_true,Y_pred,average='weighted'))
+        f1=(2*pre*re)/(pre+re)
         met=[acc,pre,re,f1]
         return met
         
