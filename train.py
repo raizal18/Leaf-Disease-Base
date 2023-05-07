@@ -122,6 +122,26 @@ else:
 
 
 
-model = tf.keras.Sequential()
-model.add(LSTM())
+
+# Define the model architecture
+model = tf.keras.Sequential([
+    tf.keras.layers.Reshape((64, 64, 1), input_shape=(4096,)),
+    tf.keras.layers.Conv2D(32, (3, 3), activation='relu'),
+    tf.keras.layers.MaxPooling2D((2, 2)),
+    tf.keras.layers.TimeDistributed(tf.keras.layers.Flatten()),
+    tf.keras.layers.LSTM(64),
+    tf.keras.layers.Dense(38, activation='softmax')
+])
+
+# Compile the model
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+
+
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir='./logs')
+# Train the model
+
+model.fit(train_data, train_labels, epochs=10, batch_size=32, callbacks=[tensorboard_callback])
+
 
