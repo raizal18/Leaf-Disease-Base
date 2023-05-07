@@ -119,3 +119,18 @@ np.save('features/labels.npy', y_train)
 
 
 print('sub 2 completed')
+
+
+# train_data = []
+# train_labels = np.load('features/labels.npy')
+# for i in range(train_labels.shape[0]):
+#     train_data.append(np.mean(np.reshape(np.mean(np.squeeze(np.load(f'features/{format(i,"05d")}.npy')),axis=0),(32,int(131072/32))),axis=0))
+# train_data = np.array(train_data)
+# np.save('D:/PHD/Leaf Disease/CODE/features_compressed/feature.npy',np.array(train_data))
+
+# samp = []
+# for i in range(10000):
+#     samp.append(np.mean(np.reshape(np.mean(np.squeeze(arr),axis=0),(32,int(131072/32))),axis=0))
+
+
+# np.save('D:/PHD/Leaf Disease/CODE/features_compressed/feature.npy',np.array(samp))

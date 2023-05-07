@@ -10,8 +10,9 @@ if os.path.isfile('models/resnet.h5'):
     model = load_model('models/resnet.h5')
 else:
 
-    resnet = ResNet50(weights='imagenet', include_top=False)
+    model = ResNet50(weights='imagenet', include_top=False)
 
+print(model.summary())
 
 def extract_feature(img):
     img = np.expand_dims(img, axis=0)

@@ -10,7 +10,8 @@ if os.path.isfile('models/vgg.h5'):
 
 else:
     model = VGG16(weights='imagenet', include_top=False)
-
+    
+print(model.summary())
 
 def extract_features(x):
 
