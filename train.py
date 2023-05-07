@@ -13,13 +13,25 @@ from keras.utils import Progbar
 from sklearn.model_selection import train_test_split
 from keras.layers import Dense, Conv1D, LSTM,Concatenate,ReLU 
 
+# set Default Flags  
+ 
 EXTRAXT_FEATURE = False
+
+SAVE_MODEL = False
 
 images = img_gen.filepaths
 
 labels = img_gen.labels
 
 unique_id = img_gen.class_indices
+
+unique_key = {value:key for key, value in unique_id.items()}
+
+def inverse_transform(pred, unique_key : dict = unique_key):
+    labels = []
+    for instance in pred:
+        labels.append(unique_key[np.argmax(instance,axis=0)])
+    return np.array(labels)
 
 
 x_train, x_test, y_train, y_test = train_test_split(np.array(images), np.array(labels), test_size=0.30)
@@ -100,8 +112,8 @@ def data_generator(image_files, label_array, batch_size):
 
 
 if EXTRAXT_FEATURE == True:
-    _, x_train, _, y_train = train_test_split(images, tf.keras.utils.to_categorical(labels),test_size=0.20)
 
+    _, x_train, _, y_train = train_test_split(images, tf.keras.utils.to_categorical(labels),test_size=0.20)
 
     x_ = []
     y_ = []
@@ -116,10 +128,8 @@ if EXTRAXT_FEATURE == True:
     print('sub 1 completed')
 
 else:
-    train_data = np.load('features/feature.npy')
-    train_labels = np.load('features/labels.npy')
-
-
+    x_test = train_data = np.load('features/feature.npy')
+    y_test = train_labels = np.load('features/labels.npy')
 
 
 
@@ -139,9 +149,25 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 
+# Load model weights for avoid model from scratch
+
+model = tf.keras.models.load_model('trained_weights.h5')
+
+
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir='./logs')
 # Train the model
 
 model.fit(train_data, train_labels, epochs=10, batch_size=32, callbacks=[tensorboard_callback])
 
+if SAVE_MODEL == True:
+    model.save('trained_weights.h5')
 
+pred = model.predict(x_test)
+
+y_pred = inverse_transform(pred)
+y_true = inverse_transform(y_test)
+
+from sklearn.metrics import multilabel_confusion_matrix, classification_report
+
+cm = multilabel_confusion_matrix(y_true, y_pred)
+print(classification_report(y_true,y_pred))
