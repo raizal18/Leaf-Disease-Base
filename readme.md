@@ -1,9 +1,14 @@
 Requirememt :
 python 3.10.10
 
+to run 
+run train.py
+
+
 pakages
 
 --> requiremnet.txt
+
 pip3 install torch torchvision torchaudio
 
 

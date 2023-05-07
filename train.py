@@ -14,6 +14,9 @@ from sklearn.model_selection import train_test_split
 from keras.layers import Dense, Conv1D, LSTM,Concatenate,ReLU 
 from confusion import confusion
 from sklearn.metrics import multilabel_confusion_matrix, classification_report
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 # set Default Flags  
  
@@ -178,3 +181,24 @@ cm = multilabel_confusion_matrix(y_true, y_pred)
 
 met = confusion(y_pred, y_true)
 
+[acc,pre, rec, f1s] = met.metrics()
+cm = met.getmatrix()
+print('classification report')
+print(classification_report(y_pred = met.Y_pred,y_true=met.Y_true))
+
+plt.figure(figsize = (15, 15),dpi = 60)
+
+sns.heatmap(cm, annot=cm,fmt='5d',cbar=False)
+cent = 0.5
+plt.xticks([0.5 + i for i in range(0,cm.shape[0])],[i for i in range(0,cm.shape[0])])
+plt.yticks([0.5 + i for i in range(0,cm.shape[0])],[i for i in range(0,cm.shape[0])])
+
+plt.ylabel('Predicted ')
+plt.xlabel('actual ')
+
+plt.show(block=False)
+
+for key , value in unique_key.items():
+    print(f'class id {key} : class label -> {value}\n')
+
+print(f"model accuracy : {acc} precision : {pre} recall : {rec} f1_score {f1s}")
